@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SimpleOS | Calculator</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, aquamarine 0%, #4fc3f7 50%, #a8e063 100%);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        /* --- CALCOLATRICE AERO --- */
+        #calculator {
+            width: 260px;
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        #display {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            color: #dff;
+            box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        /* --- GRID BUTTONS --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        /* --- BUTTONS AERO --- */
+        #calculator button {
+            height: 45px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(to bottom, #ffffffaa, #00c3ffaa);
+            color: #003;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.4);
+            transition: 0.15s;
+        }
+
+        #calculator button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(to bottom, #ffffffcc, #00eaffcc);
+        }
+
+        #calculator button:active {
+            transform: scale(0.95);
+        }
+
+        /* --- TASTO UGUALE --- */
+        .equal {
+            grid-column: span 4;
+            background: linear-gradient(to bottom, #ffaaaa, #ff4444);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+        }
+
+        .equal:hover {
+            background: linear-gradient(to bottom, #ffcccc, #ff6666);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="calculator">
+        <input id="display" type="text" disabled>
+
+        <div class="grid">
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+            <button onclick="press('/')">÷</button>
+
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+            <button onclick="press('*')">×</button>
+
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+            <button onclick="press('-')">−</button>
+
+            <button onclick="press('0')">0</button>
+            <button onclick="press('.')">.</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="press('+')">+</button>
+
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <br>
+
+    <script>
+        try{
+            function press(value) {
+                document.getElementById("display").value += value;
+            }
+
+            function calculate() {
+                try{
+                    try {
+                        const result = eval(document.getElementById("display").value);
+                        document.getElementById("display").value = result;
+                    } catch {
+                    document.getElementById("display").value = "Error";
+                    }
+                }catch{
+                    document.getElementById("display").value = "Error";
+                }
+            }
+
+            function clearDisplay() {
+                document.getElementById("display").value = "";
+            }
+        }catch{
+            document.getElementById("display").value = "fuck you";
+        }
+    </script>
+    <br>
+    <a href="SimpleOs.html">
+        <br>
+            <img src="https://frutigeraeroarchive.org/images/icons/windows_vista/vista_netcenter.ico" height="30" width="30" style="vertical-align: middle; margin-top: 10px;">
+            <br>
+            <b>back to home</b>
+        </a>
+        <br>
+    </body>
+</html>

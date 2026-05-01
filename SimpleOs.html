@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SimpleOs</title>
+        <style>
+            :root{
+                --aero-blue: #4fc3f7;
+                --aero-green: #a8e063; 
+                --aero-glass: rgba(118, 109, 109, 0.338);
+                --aero-blur: blur(12px);
+
+            }
+
+        </style>
+    </head>
+    <body style="background-color: black; color: white;">
+        <div id="home">
+            <h1 style="text-align: center; outline-color: blue; outline-style: solid; outline-width: 1px; color: aquamarine; background-color: rgb(2, 90, 73);">SimpleOS</h1>
+            <p style="color: white;"> Hello, and welcome to SimpleOs,<br> this site is a simulation of an Os I created in my freetime with only 3 programming languages, these are: </p>
+            <ul style="color: white;">
+                <li>HTML5</li>
+                <li>Css</li>
+                <li>JavaScript (Js)</li>
+            </ul>
+            <p>I hope you enjoy this "Os" that runs in your browser, because this really took some time to make. Unfortunately this can run only on pc, laptops or big screens, because when opened from a small screen such as from a phone everything gets messed up</p>
+            <br>
+            <div style="text-align: center;">
+                <button id="run" style="color:rgb(153, 255, 221); background-color: rgb(5, 74, 74);">RUN SimpleOs NOW &#8595; &darr; </button>
+            
+                <p id="1" style="text-align: center;"></p>
+             </div>
+        </div>
+        
+
+            <div id="SimpleOs" class="glass" style="display:none;">
+                <h1 style="text-align: left;">SimpleOs</h1>
+                 <p>this is SimpleOs, welcome, please sign in:</p>
+                <br>
+                <br>
+                <input class="im" id="username" type="text" placeholder="Username">
+                <br>
+                <br>
+                <input class="im" id="password" type="password" placeholder="Password">
+                <br>
+                <br>
+                <button class="yes" id="user_sign">sign in</button>
+                
+             <button class="no" id="erase">log out</button>
+                <aside>
+                    <h3 id="Welcome"></h3>
+                </aside>
+                <script>
+                        document.getElementById("user_sign").addEventListener("click", function(){
+                        const valore = document.getElementById("username").value;
+                        const pass = document.getElementById("password").value;
+                        if(document.getElementById("password").value == "" || document.getElementById("username").value == ""){
+                            alert("Please fill in all the fields!");
+                            return;
+                        }
+                        document.getElementById("Welcome").innerHTML = "Welcome, " + valore + "!";
+                        })
+
+                        document.getElementById("erase").addEventListener("click", function(){
+                        document.getElementById("Welcome").innerHTML = " ";
+                        document.getElementById("username").value = "";
+                    })
+                </script>
+                    <style>
+                    .im{
+                        margin: 10px 10px 10px 10px;
+                        padding: 10px;
+                        border-radius: 30px;
+                        background: linear-gradient(to top, green, aquamarine, white);
+                        display: block;
+                        width: 50%;
+                        border: 2px outset;
+                        border-color: rgb(149, 229, 255);
+                        
+
+                    }
+                    .no{
+                        margin: 10px 10px 10px 10px;
+                        padding: 10px;
+                        border-radius: 30px;
+                        background: linear-gradient(to bottom, #ffffffaf, #ff0000aa);
+                        border: 2px outset;
+                        border-color: rgb(149, 229, 255);
+                    }
+                    .yes{
+                        margin: 10px 10px 10px 10px;
+                        padding: 10px;
+                        border-radius: 30px;
+                        background: linear-gradient(to bottom, #ffffffaf, #8cff00aa);
+                        border: 2px outset;
+                        border-color: rgb(149, 229, 255);
+                    }
+                    .glass {
+                        background: linear-gradient(to bottom, #4fc3f7, #a8e063);
+                        width: 100%;
+                        height: 100%;
+                    }
+                </style>
+
+                </div>
+
+                <script>
+                    let Runnerò = document.getElementById("run");
+
+                    Runnerò.addEventListener("click", function() {
+                        document.getElementById("1").innerHTML = "Loading SimpleOs… 💻";
+
+                        setTimeout(() => {
+                            document.getElementById("SimpleOs").style.display = "block";
+                            document.getElementById("home").style.display = "none";
+                        }, 1000);
+                    });
+                </script>
+        <style>
+            .mainSimpleOs {
+            background-image: url("https://frutigeraeroarchive.org/images/wallpapers/asadal_stock/asadal_stock_114.jpg");
+            background-size: cover;
+            background-position: center;
+            }  
+        </style>    
+        <div class="mainSimpleOs" id="mainSimpleOs" style="display:none;">   
+            
+            <h1 style="text-align: center; color: white">Main window (Desktop)</h1>
+            <style>
+                 .mainSimpleOs{
+                    
+                    width: 100%;
+                    height: 100vh;
+                    display:none;
+                }
+            </style>  
+            <div style="text-align: left; margin: 5px;">
+                
+                <a href="calc.html">
+                    <img style="border-color: aliceblue;" height="50" widht="50" src="https://static.vecteezy.com/system/resources/previews/018/972/682/original/calculator-3d-application-icon-png.png" />
+                    <br>
+                    <p  id="name1"><b><i>calculator</i></b></p>
+                </a>
+            </div>
+            <script>
+                
+                let runner = document.getElementById("user_sign");
+                runner.addEventListener("click", function() {
+                    const username = document.getElementById("username").value;
+                    const password = document.getElementById("password").value;
+                    if( username == "" || username == " " || password == "" || password == " "){
+                        
+                        alert("cannot access without a username and password, please entere the credentials you prefer...")
+                        return;
+                    }else{
+                        setTimeout(() => {
+                            document.getElementById("SimpleOs").style.display = "none";
+                            document.getElementById("mainSimpleOs").style.display = "block";
+                        }, 2000);   
+                    }
+                });
+            </script>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <footer>
+                <style>
+                    footer{
+                        width: 90%;
+                        height: 50px;
+                        margin: 40px;
+                        border-radius: 30px;
+                        background-image: url("https://th.bing.com/th/id/R.de7f205aa2720421cc48d142236ee8f0?rik=BtIIZxRc5rXz7A&pid=ImgRaw&r=0");
+                        color:white;
+                        border-color: black;
+                        border: 2px inset;
+                    }
+                </style>
+                <a href="folder.html" >
+                    
+                    <img src="https://frutigeraeroarchive.org/images/icons/utilities/explorer.ico" width="30" height="30" style="margin: 5px; text-align: left;"/>
+                </a>
+                
+            </footer>
+        </div>
+        <div id="contextMenu">
+            <div class="item">Open</div>
+            <div class="item">Rename</div>
+            <div class="item">Delete</div>
+        </div>
+        <script>
+        
+            document.addEventListener("contextmenu", e => {
+                e.preventDefault();
+            });
+
+
+        const menu = document.getElementById("contextMenu");
+
+        document.addEventListener("contextmenu", e => {
+            menu.style.display = "block";
+            menu.style.left = e.pageX + "px";
+            menu.style.top = e.pageY + "px";
+        });
+
+             
+        document.addEventListener("click", () => {
+        menu.style.display = "none";
+        });
+
+
+        document.querySelectorAll("#contextMenu .item").forEach(item => {
+            item.addEventListener("click", () => {
+                console.log("Hai cliccato:", item.textContent);
+            });
+        });
+
+        </script>
+        <style>
+            #contextMenu {
+                position: absolute;
+                display: none;
+                z-index: 999999;
+                background: #4f6d0d7e;
+                color: rgba(26, 56, 47, 0.671);
+                padding: 8px;
+                border-radius: 6px;
+            }
+
+        </style>
+    </body>
+
+</html> 
